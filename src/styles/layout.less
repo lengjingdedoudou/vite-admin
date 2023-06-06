@@ -1,0 +1,60 @@
+@import './reactivity.less';
+
+@{adp-default-prefix} {
+  .full {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__container {
+    .full();
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__blank-layout {
+    .full();
+    position: relative;
+  }
+
+  &__basic-layout {
+    .full();
+    position: relative;
+    display: flex;
+
+    &-content {
+      flex-shrink: 0;
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      &-wrap {
+        flex-grow: 1;
+        overflow: hidden;
+      }
+    }
+
+    &-header {
+      width: 100%;
+      height: 50px;
+      background-color: aqua;
+    }
+
+    &-side {
+      width: var(--default-basic-layout-side-width);
+      height: 100%;
+
+      background-color: bisque;
+    }
+
+    &-background {
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+    }
+  }
+}
